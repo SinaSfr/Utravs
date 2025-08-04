@@ -754,6 +754,7 @@ body {
 }
 
 .search-nav {
+  display: none;
   z-index: 10;
   background: var(--primary-600);
   margin: 0 auto;
@@ -914,6 +915,33 @@ body {
   color: var(--primary-600);
 }
 
+
+.second-room-type{
+  border: 1px solid var(--primary-600);
+  border-radius: 8px;
+  padding: 0.5rem;
+  height: 44px !important;
+  color: var(--primary-600);
+}
+
+.deleteRoom {
+  border: 1px solid var(--primary-600);
+  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  width: 6rem !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-600);
+}
+
+.second-room-type:hover,
+.deleteRoom:hover {
+    background-color: var(--primary-600) !important;
+    color: white !important;
+}
+
+
 .passenger-counts.passenger-count{
   padding-top: 0.25rem;
 }
@@ -1042,6 +1070,12 @@ body {
 .Basis_Date.start_date,
 .Basis_Date.end_date {
   padding-top: 0 !important;
+}
+
+.Basis_Date.start_date::placeholder,
+.Basis_Date.end_date::placeholder,
+.departure::placeholder{
+  color: #000000 !important;
 }
 
 .reserve-field.flightclass-field svg:first-of-type {
@@ -1361,7 +1395,6 @@ body {
 .passengerbox.hidden-box {
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  margin-top: 9px;
 }
 
 .ul-list ul li:not(:last-child) {
@@ -1398,7 +1431,11 @@ body {
 .passenger-item.room-passenger-item,
 .passengerbox.hidden-box .passenger-item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.passenger-item .clr{
+  position: absolute;
 }
 
 .plus-count span {
@@ -1417,7 +1454,7 @@ body {
 .plus-count div {
   width: 32px !important;
   height: 32px !important;
-  background: #ad924c;
+  background: var(--primary-600);
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1444,6 +1481,18 @@ body {
 .search-box-container .birthdate-dates div::after {
   top: 0.8em !important;
 }
+
+.fixed-passengerbox{
+  z-index: 30 !important;
+}
+
+.passenger-item.room-passenger-item label,
+.passenger-item.room-passenger-item .first-room-type,
+.passenger-item.room-passenger-item .plus-count,
+.passenger-item.room-passenger-item .minus-count {
+  display: none;
+}
+
 .birthdate-day-value,
 .birthdate-month-value,
 .birthdate-year-value {

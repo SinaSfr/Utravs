@@ -114,6 +114,10 @@
   margin-top: -2.5rem;
 }
 
+.-mt-28 {
+  margin-top: -7rem;
+}
+
 .-mt-40 {
   margin-top: -10rem;
 }
@@ -920,7 +924,7 @@
 .loader {
   width: 48px;
   height: 48px;
-  border: 3px dotted #7a82ab;
+  border: 3px dotted var(--secondary-600);
   border-style: solid solid dotted dotted;
   border-radius: 50%;
   display: inline-block;
@@ -1020,7 +1024,7 @@
 .r-insurance.module-form,
 .r-cip.module-form,
 .r-visa.module-form {
-  padding: 83px 16px 34px 16px;
+  padding: 34px 16px;
 }
 
 .r-flight.module-form,
@@ -1042,6 +1046,7 @@
 }
 
 .search-nav {
+  display: none;
   position: absolute;
   z-index: 10;
   background: var(--primary-600);
@@ -1409,6 +1414,12 @@
 .Basis_Date.start_date,
 .Basis_Date.end_date {
   padding-top: 0 !important;
+}
+
+.Basis_Date.start_date::placeholder,
+.Basis_Date.end_date::placeholder,
+.departure::placeholder{
+  color: #000000 !important;
 }
 
 .reserve-field.flightclass-field svg:first-of-type {
@@ -1874,7 +1885,7 @@
 }
 
 .createChildDropdown .select-age {
-  border: 1px solid #7a82ab;
+  border: 1px solid var(--secondary-600);
   border-radius: 8px;
   outline: none;
   height: 48px !important;
@@ -1887,7 +1898,7 @@
 .birthdate-day-value,
 .birthdate-month-value,
 .birthdate-year-value {
-  border: 1px solid #7a82ab !important;
+  border: 1px solid var(--secondary-600) !important;
   border-radius: 8px;
   margin-top: 0.5rem;
 }

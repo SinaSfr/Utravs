@@ -37,24 +37,20 @@
     <meta name="enamad" content="" />
     <meta name="samandehi" content="" />
     <!-- pwa metatags -->
-    <basis core="call" file="pwa.inc" lid="2"/>
+    <basis core="call" file="pwa.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
     <!-- define -->
     <link rel="preload" as="image" imageSrcSet="image address" fetchpriority="high" />
     <!-- common styles for all page -->
-    <basis core="call" file="style.inc" lid="2"/>
+    <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
 </head>
 
 
 
 <body>
-    <basis core="call" file="header.inc" lid="2" />
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
     <main>
-        <h1 class="h1-tag">BASISFLY DEMO</h1>
-        <section class="relative -z-10 mt-2 mx-auto w-[99%] rounded-[43px] overflow-hidden module-banner-image">
-            <img src="[##cms.cms.cdn##]/images/default-back.jpg" class="h-[519px] object-cover" alt="tour-search-bg"
-                width="100%" height="519" loading="lazy">
-        </section>
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl -mt-40 bg-search">
+        <h1 class="h1-tag">Utravs</h1>
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl bg-search mt-10">
             <div class="search-banner">
                 <div class="search-box-container mobile-search-box en">
                     <div id="search-box" class="dir-ltr">
@@ -63,8 +59,8 @@
                 </div>
             </div>
         </section>
-        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-14 bg-zinc-100 p-6 rounded-3xl">
-            <div class="flex items-center justify-between gap-3">
+        <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-14 bg-zinc-100 p-3 rounded-3xl">
+            <div class="flex flex-col justify-between gap-3">
                 <div class="flex items-center gap-2">
                     <svg width="48" height="48" class="flex-shrink-0 -scale-x-100">
                         <use xlink:href="./images/sprite-icons.svg#icon-plane"></use>
@@ -104,9 +100,9 @@
             </div>
         </section>
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8 mb-20">
-            <div class="grid grid-cols-3 gap-3">
+            <div class="flex flex-col gap-3">
                 <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
-                    <div class="absolute w-[54%] ml-4 left-0 top-12">
+                    <div class="absolute w-[53%] ml-4 left-0 top-12">
                         <h2 class="mb-2 text-xl font-bold text-zinc-900">Enjoy the Journey with BASISFLY DEMO</h2>
                         <div class="mb-4 text-sm text-secondary-600">
                             Purchasing Airline Tickets with Services Like Credit Payment Options
@@ -116,7 +112,7 @@
                         height="208" loading="lazy">
                 </div>
                 <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
-                    <div class="absolute w-[54%] ml-4 left-0 top-12">
+                    <div class="absolute w-[53%] ml-4 left-0 top-12">
                         <h2 class="mb-2 text-xl font-bold text-zinc-900">Purchase an International Flight Ticket Now!
                         </h2>
                         <div class="mb-4 text-sm text-secondary-600">
@@ -127,7 +123,7 @@
                         height="208" loading="lazy">
                 </div>
                 <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
-                    <div class="absolute w-[54%] ml-4 left-0 top-12">
+                    <div class="absolute w-[53%] ml-4 left-0 top-12">
                         <h2 class="mb-2 text-xl font-bold text-zinc-900">Book Your Hotel Now!</h2>
                         <div class="mb-4 text-sm text-secondary-600">
                             Book the Finest Domestic and International Hotels
@@ -141,7 +137,7 @@
         </section>
 
     </main>
-    <basis core="call" file="footer.inc" lid="2" />
+    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
 
 </body>
 
