@@ -1254,10 +1254,6 @@
     background-color: var(--primary-600) !important;
 }
 
-.search-box-container input::placeholder {
-  color: var(--primary-600);
-}
-
 .passenger-counts.passenger-count {
   padding-top: 0.25rem;
 }
@@ -1393,7 +1389,7 @@
 
 .reserve-field.departure-route,
 .reserve-field.destination-route {
-  height: 64px !important;
+  height: 66px !important;
 }
 
 .reserve-field.departure-route label span,
@@ -1914,3 +1910,59 @@
   gap: 1rem;
 }
 
+
+.about-form
+  [data-bc-schema-direction="rtl"]
+  [data-bc-title-container]
+  [data-bc-question-title] {
+  display: none !important;
+}
+.about-form [data-bc-answer-container] input[type="text"]{
+  background-color: white !important;
+  color: #000000 !important;
+  height: 55px !important;
+  padding: 16px 21px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 12px !important;
+  border: 1px solid #A1A1AA !important;
+  font-size: 16px !important;
+  direction: ltr !important;
+}
+.about-form [data-bc-answer-container] textarea{
+  background-color: white !important;
+  color: #000000 !important;
+  height: 170px !important;
+  padding: 16px 21px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 12px !important;
+  border: 1px solid #A1A1AA !important;
+  font-size: 16px !important;
+  direction: ltr !important;
+}
+.about-form [data-bc-schema-direction="rtl"] [data-bc-part-container] {
+  width: 100%;
+}
+.about-form [data-bc-answer-container] input[type="text"]::placeholder {
+  color: #A1A1AA !important;
+}
+.about-form [data-bc-answer-container] textarea::placeholder {
+  color: #A1A1AA !important;
+}
+.about-form [data-bc-answer-container] {
+  width: 100% !important;
+}
+.about-form [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  width: 100% !important;
+}
+.about-form [data-bc-section] {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+.about-form [data-bc-part] {
+  margin-bottom: 0 !important;
+}
+ .about-form [data-bc-validation-part]{
+  direction: ltr;
+ }

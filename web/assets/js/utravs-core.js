@@ -1,62 +1,62 @@
-// document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-//     const isDesktop = window.innerWidth > 1024;
-//     const requiredFiles = isDesktop
-//       ? ["utravs.ui.min.css"]
-//       : ["utravs-mob.ui.min.css"];
+    const isDesktop = window.innerWidth > 1024;
+    const requiredFiles = isDesktop
+      ? ["utravs.ui.min.css"]
+      : ["utravs-mob.ui.min.css"];
   
-//     function checkAllResourcesLoaded() {
-//       const resources = performance.getEntriesByType("resource");
-//       const loadedFiles = resources
-//         .map((res) => res.name.split("/").pop()) 
-//         .filter((name) => requiredFiles.includes(name));
+    function checkAllResourcesLoaded() {
+      const resources = performance.getEntriesByType("resource");
+      const loadedFiles = resources
+        .map((res) => res.name.split("/").pop()) 
+        .filter((name) => requiredFiles.includes(name));
       
-//       return requiredFiles.every((file) => loadedFiles.includes(file));
-//     }
+      return requiredFiles.every((file) => loadedFiles.includes(file));
+    }
   
-//     if(document.getElementById("search-box")){
-//       function fetchEngine() {
-//         try {
-//           const xhrobj = new XMLHttpRequest();
-//           xhrobj.open("GET", "search-engine.bc");
-//           xhrobj.send();
+    if(document.getElementById("search-box")){
+      function fetchEngine() {
+        try {
+          const xhrobj = new XMLHttpRequest();
+          xhrobj.open("GET", "search-engine.bc");
+          xhrobj.send();
     
-//           xhrobj.onreadystatechange = function () {
-//             if (this.readyState == 4 && this.status == 200) {
-//               const container = document.getElementById("search-box");
-//               container.innerHTML = xhrobj.responseText;
+          xhrobj.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              const container = document.getElementById("search-box");
+              container.innerHTML = xhrobj.responseText;
     
-//               const scripts = container.getElementsByTagName("script");
-//               for (let i = 0; i < scripts.length; i++) {
-//                 const scriptTag = document.createElement("script");
-//                 if (scripts[i].src) {
-//                   scriptTag.src = scripts[i].src;
-//                   scriptTag.async = false;
-//                 } else {
-//                   scriptTag.text = scripts[i].textContent;
-//                 }
-//                 document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
-//               }
-//             }
-//           };
-//         } catch (error) {
-//           console.error("A problem has occurred. Please be patient.", error);
-//         }
-//       }
+              const scripts = container.getElementsByTagName("script");
+              for (let i = 0; i < scripts.length; i++) {
+                const scriptTag = document.createElement("script");
+                if (scripts[i].src) {
+                  scriptTag.src = scripts[i].src;
+                  scriptTag.async = false;
+                } else {
+                  scriptTag.text = scripts[i].textContent;
+                }
+                document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+              }
+            }
+          };
+        } catch (error) {
+          console.error("A problem has occurred. Please be patient.", error);
+        }
+      }
 
-//       function waitForFiles() {
-//         if (checkAllResourcesLoaded()) {
-//           fetchEngine();
-//         } else {
-//           setTimeout(waitForFiles, 500);
-//         }
-//       }
-//       waitForFiles();
-//     }
+      function waitForFiles() {
+        if (checkAllResourcesLoaded()) {
+          fetchEngine();
+        } else {
+          setTimeout(waitForFiles, 500);
+        }
+      }
+      waitForFiles();
+    }
   
 
   
-//   });
+  });
   
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -151,136 +151,70 @@
     });
   });
   
-  //form contact
-  function uploadDocumentContact(args) {
-    document.querySelector("#contact-form-resize .Loading_Form").style.display =
-      "block";
-    const captcha = document
-      .querySelector("#contact-form-resize")
-      .querySelector("#captchaContainer input[name='captcha']").value;
-    const captchaid = document
-      .querySelector("#contact-form-resize")
-      .querySelector("#captchaContainer input[name='captchaid']").value;
-    const stringJson = JSON.stringify(args.source?.rows[0]);
-    $bc.setSource("cms.uploadContact", {
-      value: stringJson,
-      captcha: captcha,
-      captchaid: captchaid,
-      run: true,
-    });
-  }
-  
-  function refreshCaptchaContact(e) {
-    $bc.setSource("captcha.refreshContact", true);
-  }
-  
-  async function OnProcessedEditObjectContact(args) {
-    var response = args.response;
-    var json = await response.json();
-    var errorid = json.errorid;
-    if (errorid == "6") {
-      document.querySelector("#contact-form-resize .Loading_Form").style.display =
-        "none";
-      document.querySelector("#contact-form-resize .message-api").innerHTML =
-        "Your request has been successfully submitted.";
-    } else {
-      refreshCaptchaContact();
-      setTimeout(() => {
-        document.querySelector(
-          "#contact-form-resize .Loading_Form"
-        ).style.display = "none";
-        document.querySelector("#contact-form-resize .message-api").innerHTML =
-          "An error occurred, please try again.";
-      }, 2000);
-    }
-  }
-  
-  async function RenderFormContact() {
-    var inputElementVisa7 = document.querySelector(
-      " .about-form-message textarea[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "Message");
-  
-    var inputElementVisa7 = document.querySelector(
-      " .about-form-email input[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "Email");
-  }
-  
-  //form suggest
-  function uploadDocumentSuggest(args) {
-    document.querySelector("#suggest-form-resize .Loading_Form").style.display =
-      "block";
-    const captcha = document
-      .querySelector("#suggest-form-resize")
-      .querySelector("#captchaContainer input[name='captcha']").value;
-    const captchaid = document
-      .querySelector("#suggest-form-resize")
-      .querySelector("#captchaContainer input[name='captchaid']").value;
-    const stringJson = JSON.stringify(args.source?.rows[0]);
-    $bc.setSource("cms.uploadSuggest", {
-      value: stringJson,
-      captcha: captcha,
-      captchaid: captchaid,
-      run: true,
-    });
-  }
-  
-  function refreshCaptchaSuggest(e) {
-    $bc.setSource("captcha.refreshSuggest", true);
-  }
-  
-  async function OnProcessedEditObjectSuggest(args) {
-    var response = args.response;
-    var json = await response.json();
-    var errorid = json.errorid;
-    if (errorid == "6") {
-      document.querySelector("#suggest-form-resize .Loading_Form").style.display =
-        "none";
-      document.querySelector("#suggest-form-resize .message-api").innerHTML =
-        "Your request has been successfully submitted.";
-  
-        setTimeout(() => {
-          location.reload();
-        }, 2000);
+  // about-form
+function uploadDocumentAbout(args) {
+  document.querySelector("#about-form .Loading_Form").style.display = "block";
+  const captcha = document
+    .querySelector("#about-form")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#about-form")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadAbout", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
 
+function refreshCaptchaAbout(e) {
+  $bc.setSource("captcha.refreshAbout", true);
+}
 
-    } else {
-      refreshCaptchaSuggest();
-      setTimeout(() => {
-        document.querySelector(
-          "#suggest-form-resize .Loading_Form"
-        ).style.display = "none";
-        document.querySelector("#suggest-form-resize .message-api").innerHTML =
-          "An error occurred, please try again.";
-      }, 2000);
-    }
+async function OnProcessedEditObjectAbout(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#about-form .Loading_Form").style.display = "none";
+    document.querySelector("#about-form .message-api").innerHTML =
+      "Your request has been successfully submitted.";
+    document.querySelector("#about-form .message-api").style.color =
+      "rgb(10 240 10)";
+  } else {
+    refreshCaptchaAbout();
+    setTimeout(() => {
+      document.querySelector("#about-form .Loading_Form").style.display =
+        "none";
+      document.querySelector("#about-form .message-api").innerHTML =
+        "An error occurred. Please try again.";
+      document.querySelector("#about-form .message-api").style.color =
+        "rgb(220 38 38)";
+    }, 2000);
   }
-  
-  async function RenderFormSuggest() {
-    var inputElementVisa7 = document.querySelector(
-      " .left-form-message textarea[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "Message");
-  
-    var inputElementVisa7 = document.querySelector(
-      " .left-form-name input[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "Name");
-  
-    var inputElementVisa7 = document.querySelector(
-      " .left-form-number input[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "Phone Number");
-  
-    var inputElementVisa7 = document.querySelector(
-      " .left-form-payment input[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "invoice ");
-  
-    var inputElementVisa7 = document.querySelector(
-      " .left-form-email input[data-bc-text-input]"
-    );
-    inputElementVisa7.setAttribute("placeholder", "Email");
-  }
+}
+
+async function RenderFormAbout() {
+  var inputElementVisa7 = document.querySelector(
+    ".name-contact input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Name");
+
+  var inputElementVisa7 = document.querySelector(
+    ".phone-contact input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Phone Number");
+
+  var inputElementVisa7 = document.querySelector(
+    ".email-contact input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Email");
+
+  var inputElementVisa7 = document.querySelector(
+    ".message-contact textarea[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Message");
+}
   

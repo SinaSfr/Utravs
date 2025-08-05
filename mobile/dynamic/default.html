@@ -1,5 +1,5 @@
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="slogan-list">
-    <member name="cat" type="tree" request="cat" parentid="213901" order="ord"></member>
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="215909">
+    <member name="slogan-list" type="list" link="article.bc" propertyid="7244" perpage="3" order="ord" size="288x208" />
 </basis>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,28 +8,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
     <!-- Title & Description -->
-    <title>BASISFLY DEMO | Discover the Best Travel Deals – Book Hotels and Flights in Seconds!</title>
-    <meta name="description" content="BASISFLY DEMO">
+    <title>utravs | Tour service reservation</title>
+    <meta name="description" content="utravs / Online tour service booking">
     <!-- canonical for Homepage -->
     <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
     <!-- fill items with Agancy Info -->
-    <meta name="og:locale" content="En_US">
-    <meta property="og:title"
-        content="BASISFLY DEMO | Discover the Best Travel Deals – Book Hotels and Flights in Seconds!">
+    <meta name="og:locale" content="fa_IR">
+    <meta property="og:title" content="utravs |Online tour service booking|">
     <meta property="og:url" content="[##cms.request.:scheme##]://[##cms.request.full-url##]">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="BASISFLYDEMO">
-    <meta property="og:image" content="https://demo.basisfly.ae/images/custom_image_1200x630.png">
-    <meta property="og:image:alt" content="BASISFLY DEMO logo">
-    <meta property="og:description"
-        content="Book your next trip with BASISFLY DEMO! Compare and book top hotels and cheap flights worldwide in just Seconds. Secure, fast, and packed with exclusive travel deals.">
-    <meta property="og:image:height" content="512">
-    <meta property="og:image:width" content="512">
+    <meta property="og:site_name" content="utravs">
+    <meta property="og:image" content="[##cms.request.:scheme##]://[##cms.request.full-url##]/images/custom_image_1200x630.png">
+    <meta property="og:image:alt" content="Logo utravs">
+    <meta property="og:description" content="Online tour service booking">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1200">
     <meta property="og:image:type" content="image/png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content=" ">
-    <meta name="twitter:creator" content="BASISFLY DEMO">
-    <meta name="twitter:image" content="https://demo.basisfly.ae/images/custom_image_1200x630.png">
+    <meta name="twitter:creator" content="Utravs">
+    <meta name="twitter:image" content="[##cms.request.:scheme##]://[##cms.request.full-url##]/images/custom_image_1200x630.png">
     <meta name="twitter:title" content=" ">
     <meta name="twitter:description" content=" ">
     <meta property="seo:robots" content="index, follow" />
@@ -47,11 +45,11 @@
 
 
 <body>
-    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
     <main>
         <h1 class="h1-tag">Utravs</h1>
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl bg-search mt-10">
-            <div class="search-banner">
+            <div class="search-banner min-h-[374px]">
                 <div class="search-box-container mobile-search-box en">
                     <div id="search-box" class="dir-ltr">
                         <div class="flex justify-center"><span class="loader"></span></div>
@@ -100,44 +98,29 @@
             </div>
         </section>
         <section class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mt-8 mb-20">
-            <div class="flex flex-col gap-3">
-                <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
-                    <div class="absolute w-[53%] ml-4 left-0 top-12">
-                        <h2 class="mb-2 text-xl font-bold text-zinc-900">Enjoy the Journey with BASISFLY DEMO</h2>
-                        <div class="mb-4 text-sm text-secondary-600">
-                            Purchasing Airline Tickets with Services Like Credit Payment Options
-                        </div>
+            <basis core="list" datamembername="db.slogan-list">
+                <layout>
+                    <div class="flex flex-col gap-3">
+                        @child
                     </div>
-                    <img src="[##cms.cms.cdn##]/images/slogan-img1.jpg" class="h-52" alt="slogan-img" width="100%"
-                        height="208" loading="lazy">
-                </div>
-                <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
-                    <div class="absolute w-[53%] ml-4 left-0 top-12">
-                        <h2 class="mb-2 text-xl font-bold text-zinc-900">Purchase an International Flight Ticket Now!
-                        </h2>
-                        <div class="mb-4 text-sm text-secondary-600">
-                            Top Global Flights with Exciting Rates
+                </layout>
+                <face>
+                    <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
+                        <div class="absolute w-[53%] ml-4 left-0 top-12">
+                            <h2 class="mb-2 text-xl font-bold text-zinc-900">@title</h2>
+                            <div class="mb-4 text-sm text-secondary-600">
+                                @prp_7244
+                            </div>
                         </div>
+                        <img src="@00288X00208prp" class="h-52" alt="@title" width="100%"
+                            height="208" loading="lazy">
                     </div>
-                    <img src="[##cms.cms.cdn##]/images/slogan-img2.jpg" class="h-52" alt="slogan-img" width="100%"
-                        height="208" loading="lazy">
-                </div>
-                <div class="relative flex items-center justify-end overflow-hidden rounded-3xl">
-                    <div class="absolute w-[53%] ml-4 left-0 top-12">
-                        <h2 class="mb-2 text-xl font-bold text-zinc-900">Book Your Hotel Now!</h2>
-                        <div class="mb-4 text-sm text-secondary-600">
-                            Book the Finest Domestic and International Hotels
-                        </div>
-                    </div>
-                    <img src="[##cms.cms.cdn##]/images/slogan-img3.jpg" class="h-52" alt="slogan-img" width="100%"
-                        height="208" loading="lazy">
-                </div>
-            </div>
-
+                </face>
+            </basis>
         </section>
 
     </main>
-    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
+    <basis core="call" file="footer.inc" lid="2" pageindex="[##cms.cms.pageindex##]" />
 
 </body>
 

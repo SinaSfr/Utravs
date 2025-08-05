@@ -705,6 +705,10 @@ body {
   width: 100%;
 }
 
+.w-fit {
+  width: fit-content;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -887,6 +891,10 @@ body {
 
 .bg-center {
   background-position: center;
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .p-1 {
@@ -1076,6 +1084,7 @@ body {
   ---bg: url("");
   --default-bg: url("../images/default-back.png");
   --contact-bg: url("../images/contact-back.jpg");
+  --contactMobile-bg: url("../images/contact-back-mobile.jpg");
   --footer-bg: url("../images/footer-back.jpg");
 }
 
@@ -1141,6 +1150,10 @@ body {
 
 .hover\:text-secondary-600:hover {
   color: var(--secondary-600);
+}
+
+.group:hover .group-hover\:text-primary-600 {
+  color: var(--primary-600);
 }
 
 .hover\:text-white:hover {
