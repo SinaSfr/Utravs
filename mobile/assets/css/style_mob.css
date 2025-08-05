@@ -302,16 +302,15 @@
   color: #fff;
 }
 .top-menu img {
-  width: 42px;
+  width: 100px;
   height: auto;
   filter: unset;
 }
 .col2-second-part-header img {
-  height: 45px;
+  height: 41px;
   margin-top: 3px;
-  height: 45px;
   object-fit: cover;
-  margin-top: 3px;
+  width: auto;
 }
 .mm-spn--open {
   margin-top: 100px !important;
@@ -375,4 +374,10 @@ html body {
 .mm-spn li,
 .mm-spn ul {
   display: block !important;
+}
+
+.mm-spn--open,
+.mm-spn.mm-spn--navbar:after,
+.mm-spn a {
+  font-family: "Yekanbakh";
 }

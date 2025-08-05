@@ -206,11 +206,11 @@ fieldset hr {
 }
 .btn-item button:hover {
   background-color: #fff !important;
-  color: #000 !important;
+  color: var(--primary) !important;
   box-shadow: 0 10px 13px -10px #0c2d33;
 }
 .searched-item button:hover {
-  background-color: #000;
+  background-color: var(--secondary);
   box-shadow: 0 10px 13px -10px #0c2d33;
 }
 .exchange-icon {
@@ -247,8 +247,8 @@ fieldset hr {
   border-right: 3px solid #000;
 }
 .loading-img img {
-  margin: 0 auto;
-  width: 100%;
+  margin-top: -8px;
+  width: 85px;
 }
 .loading-img {
   margin-top: 0.2em;
