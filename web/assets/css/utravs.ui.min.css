@@ -1328,6 +1328,15 @@
   margin-bottom: 0;
 }
 
+.selectLocation svg,
+.searchList svg {
+  display: none;
+}
+
+.selectLocation .textlocation{
+  float: left;
+}
+
 .reserve-field.flightclass-field {
   width: 164px !important;
   height: 56px !important;

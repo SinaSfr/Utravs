@@ -874,6 +874,10 @@ body {
   font-family: "YekanBakh";
 }
 
+.en-calendar .Basis_Calendar{
+  font-family: "YekanBakh" !important;
+}
+
 .active-module {
   background-color: #ffffff !important;
 }
@@ -884,6 +888,19 @@ body {
 
 .active-module .module-name:hover {
   color: var(--primary-600) !important;
+}
+
+.close-module-form {
+  display: none;
+}
+
+.Basis_Calendar .year{
+  padding-top: 0 !important;
+}
+
+.close-searchList svg{
+  width: 24px !important;
+  height: 24px !important;
 }
 
 #oneway,
@@ -1010,6 +1027,14 @@ body {
   margin-bottom: 0;
 }
 
+.selectLocation svg {
+  display: none;
+}
+
+.selectLocation .textlocation{
+  float: left;
+}
+
 .reserve-field.flightclass-field {
   width: 160px !important;
   height: 56px !important;
@@ -1055,7 +1080,7 @@ body {
 }
 .reserve-field.departure-route,
 .reserve-field.destination-route {
-  height: 64px !important;
+  height: 66px !important;
 }
 
 .reserve-field.departure-route label span,
@@ -1398,6 +1423,11 @@ body {
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+
+.searchList .flex.relative.mb-2.float-right.w-full.clear-both svg{
+  display: none;
+}
+
 .passengerbox.hidden-box {
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
