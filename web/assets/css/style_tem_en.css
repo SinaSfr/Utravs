@@ -132,8 +132,8 @@ fieldset hr {
 }
 .btn-item button,
 .flight-duration-stop:before {
-  background-color: var(--secondary);
-  border: 1px solid var(--secondary);
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 .confirm,
 .details-btn {
@@ -206,7 +206,8 @@ fieldset hr {
 }
 .btn-item button:hover {
   background-color: #fff !important;
-  color: var(--primary) !important;
+  color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
   box-shadow: 0 10px 13px -10px #0c2d33;
 }
 .searched-item button:hover {
